@@ -1,0 +1,186 @@
+/* Core Styles */
+
+body {
+    margin: 0;
+    font-family: Aria, Helvetica, sans-serif;
+    background: #333333;
+    color: #ffffff;
+    font-size: 1.1em;
+    line-height: 1.5;
+    text-align: center;
+}
+
+img {
+    display: block;
+    /* Causes image to be constrained to width/height of display*/
+    height: 100%;
+    width: 100%;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 1em 0;
+}
+
+p {
+    margin: 0;
+    padding: 1em;
+}
+
+.btn {
+    /* inline-block takes entire row but wraps content */
+    display: inline-block;
+    background: #333333;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1em 2em;
+    border: 1px solid #666666;
+    margin: .5em 0;
+}
+
+.btn:hover {
+    background: #eaeaea;
+    color: #333333;
+}
+
+/* Header Showcase */
+
+#showcase {
+    min-height: 450px;
+    color: #fff;
+    text-align: center;
+}
+
+#showcase .bg-image {
+    /* Element is positioned relative to it's first positioned item */
+    position: absolute;
+    background: #333333 url("img/phone-home-ii-3440x1440.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    width: 100%;
+    /* Moves image to the back to allow to view text*/
+    z-index: -1;
+    opacity: 0.9;
+}
+
+#showcase h1 {
+    padding-top: 100px;
+    padding-bottom: 0;
+}
+
+#showcase .content-wrap, #section-a .content-wrap {
+    padding: 0 1.5em;
+}
+
+/* Section A */
+#section-a {
+    background: #333333;
+    color: #eaeaea;
+    padding-bottom: 2em;
+}
+
+/* Section B */
+#section-b {
+    padding: 2em 1em 1em;
+}
+
+#section-b ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#section-b li {
+    margin-bottom: 1em;
+    background: white;
+    color: #333;
+}
+
+.card-content {
+    padding: 1em;
+}
+
+/* Section C */
+#section-c {
+    background: #fff;
+    color: #333;
+    padding: 2em;
+}
+
+/* Section D / Boxes*/
+#section-d .box {
+    padding: 2em;
+    color: #fff;
+}
+
+#section-d .box:first-child {
+    background: deepskyblue;
+}
+
+#section-d .box p {
+    padding: 10px;
+}
+
+/* Footer */
+#main-footer {
+    padding: 2em;
+    color: white;
+    text-align: center;
+}
+
+#main-footer a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Media Query */
+@media(min-width: 915px) {
+    /* Checks if window exceeds width and grants all grid class a grid display*/
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+    }
+
+    /* Creates 2 columns */
+    #section-a .content-text {
+        columns: 2;
+        column-gap: 2em;
+    }
+
+    #section-a .content-text p {
+        padding-top: 0;
+    }
+
+    /* Causes content to span middle 2 columns*/
+    .content-wrap, #section-b ul {
+        grid-column: 2/4;
+    }
+
+    #section-d .box:first-child {
+        grid-column: 1/3;
+    }
+
+    #section-d .box:nth-child(2) {
+        padding: 2em;
+    }
+
+    .box {
+        grid-column: span 2;
+    }
+
+    /* Lines up items in one row*/
+    #section-b ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #section-b li {
+        width: 25%;
+    }
+
+    #main-footer div {
+        grid-column: 1/5;
+    }
+}
